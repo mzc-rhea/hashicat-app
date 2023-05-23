@@ -10,12 +10,6 @@ terraform {
 provider "aws" {
   region = var.region
 }
-
-module "s3_bucket" {
-  source              = "app.terraform.io/terraform-workshop-01/s3-bucket/aws"
-  version             = "3.1.0"
-  s3_object_ownership = "BucketOwnerEnforced"
-}
 resource "aws_vpc" "hashicat" {
   cidr_block           = var.address_space
   enable_dns_hostnames = true
